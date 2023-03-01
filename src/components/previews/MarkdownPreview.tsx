@@ -28,7 +28,7 @@ const MarkdownPreview: FC<{
   const { t } = useTranslation()
 
   // Check if the image is relative path instead of a absolute url
-  const isUrlAbsolute = (url: string | string[]) => url.indexOf('://') > 0 || url.indexOf('//') === 0
+  const isUrlAbsolute = (url: string | string[]) => url.indexOf('://') > 0 || url.indexOf('//') === 0 || url.includes('data:')
   // Custom renderer:
   const customRenderer = {
     // img: to render images in markdown with relative file paths
